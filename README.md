@@ -11,7 +11,7 @@ Animales Inanimadas is a non-commercial project. Routes are inspired by 'Animale
 
 In Romanesque Spain, animals in architecture functioned as a compact visual language: natural history, theological allegory, moral instruction and even collective memory of distant lands were all encoded in stone and paint. Medieval bestiaries provided the stories and vocabulary; sculptors and painters translated them into durable public lessons that shaped how people experienced sacred space. 
 
-Today that same impulse — to give buildings a narrative voice and to animate the inanimate — survives in modern architecture. Valencia is a particularly rich place to explore these “animated” elements—from sculptural motifs that imply motion to façades and installations that actually move—offering a contemporary echo of the medieval conversation between nature, symbol and built form.
+Today that same impulse - to give buildings a narrative voice and to animate the inanimate - survives in modern architecture. Valencia is a particularly rich place to explore these “animated” elements - from sculptural motifs that imply motion to façades and installations that actually move offering a contemporary echo of the medieval conversation between nature, symbol and built form.
 
 The project is inspired by the idea of spending time with children, exploring and educating them through examples of animals incorporated into the architecture.
 
