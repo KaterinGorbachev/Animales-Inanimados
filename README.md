@@ -4,7 +4,7 @@ Personal project: interactive leafet map with routes in Valencia
 ----
 ## 📄 Licence 
 
-Animales Inanimadas is a non-commercial project. Routes are inspired by 'Animales inanimados: Rutas escultóricas por la ciudad de València' by Laura A. Aceituno, Patricia Ruiz Marín y Margarita Belinchón García, and are provided under the [CC BY-NC 4.0 License]("https://creativecommons.org/licenses/by-nc/4.0/" ). 
+Animales Inanimadas is a non-commercial project. Routes are inspired by 'Animales inanimados: Rutas escultóricas por la ciudad de València' by Laura A. Aceituno, Patricia Ruiz Marín y Margarita Belinchón García, and are provided under the [CC BY-NC 4.0 License](https://creativecommons.org/licenses/by-nc/4.0/). 
 
 ----
 ## 🏛️ The idea 
