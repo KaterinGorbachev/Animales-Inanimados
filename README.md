@@ -24,6 +24,9 @@ A Helloween [Trick o Treat map](https://www.halloweenvalencia.net/es/donate)
 Luces de Navidad en Madrid [map](https://www.abc.es/espana/madrid/mapa-luces-navidad-madrid-2025-calles-puestas-20251123060000-nt.html)
 
 
+[El mapa con las atracciones turísticas más bonitas de España](https://viajar.elperiodico.com/escapate_cerca/mapa-atracciones-turisticas-bonitas-espana-91258082)
+
+
 
 ----
 ## ✨ Styles and Accessibility
