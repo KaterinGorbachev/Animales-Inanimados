@@ -18,6 +18,8 @@ The project is inspired by the idea of spending time with children, exploring an
 ----
 ## 📚 Similar projects
 
+A Helloween [Trick o Treat map](https://www.halloweenvalencia.net/es/donate)
+
 
 
 ----
