@@ -21,6 +21,9 @@ The project is inspired by the idea of spending time with children, exploring an
 A Helloween [Trick o Treat map](https://www.halloweenvalencia.net/es/donate)
 
 
+Luces de Navidad en Madrid [map](https://www.abc.es/espana/madrid/mapa-luces-navidad-madrid-2025-calles-puestas-20251123060000-nt.html)
+
+
 
 ----
 ## ✨ Styles and Accessibility
