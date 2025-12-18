@@ -1,0 +1,32 @@
+.leaflet-control-custom {
+  background: #ffffff;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.leaflet-control-custom:hover {
+  background: #f9f9f9;
+}
+
+.leaflet-control-custom:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.leaflet-control-custom svg {
+  width: 18px;
+  height: 18px;
+  fill: #000;
+}
+
+.leaflet-control-custom:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.4);
+}

@@ -1,0 +1,82 @@
+@use "sass:color"
+@use "sass:math"
+
+// colors
+$light-primary-background-color: #FCEBD9
+$light-text-background-color: #ffffff
+$light-header-background-color: #ff0000
+$light-buttons-color: #7B2E6C
+$light-title-h1-color: #8C1822
+$light-hover-color:#FF8C00
+$light-checkbox-color:#F3BEE1
+$hint-color:#C9C9C9
+$box-shadow-text-back: #f4bf422f
+$light-title-background-color: #ffffffee
+$focus-color: #FF8C00
+
+$dark-primary-background-color: #133A3C
+$dark-text-background-color: #000000
+$dark-header-background-color: #321B2E
+$dark-buttons-color: #6A8A36
+$dark-title-h1-color: #B5FF81
+$dark-hover-color:#D12300
+$dark-checkbox-color: $light-hover-color
+$dark-h3-color:#DA9DFF
+
+
+//Bagel Fat One only Regular
+//Ojuji all font-weights
+//Baloo Bhaijaan  all font-weights
+//Bai Jamjuree all font-weights
+
+$font-title: "Bagel Fat One"
+$font-header-h2: "Ojuju", sans-serif
+$font-h3: "Baloo Bhaijaan 2", sans-serif
+$font-text: "Bai Jamjuree", sans-serif
+
+
+//map-get($font-weights, regular)
+$font-weights: (
+    "regular": 400,
+    "medium": 500,
+    "bold": 700
+)
+
+
+@mixin gridMobile
+    display: grid
+    gap: 1rem // gap between columns and rows
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr))  //150px or less 200px for mobile for 2 columns
+
+
+@mixin displayFlexColumn($vertical: center, $gorizontal: center)
+    display: flex
+    flex-direction: column
+    align-items: $gorizontal
+    justify-content: $vertical
+
+
+
+
+@mixin displayFlexRow($vertical: center, $gorizontal: center)
+    display: flex
+    flex-direction: row
+    align-items: $vertical
+    justify-content: $gorizontal
+
+
+
+
+@mixin transition-ease
+    transition: all 0.5s ease-in-out
+  
+
+
+
+@function set-text-color($background-color)
+  @if color.channel($background-color, "lightness", $space: hsl) > 40%
+    @return #000
+  @else
+    @return #fff
+
+
