@@ -5,13 +5,12 @@
         <div class="card">
           <div class="emoji">🍪</div>
 
-          <h1>Usamos galletitas digitales</h1>
+          <h2>Usamos galletitas digitales</h2>
           <p>
-            En esta página usamos cookies (¡no se comen 😄!). Son pequeños ayudantes que nos
+            En esta página usamos cookies. Son pequeños ayudantes que nos
             permiten: recordar lo que te gusta, hacer que la página funcione mejor, mantener todo
             seguro y divertido. <router-link to="/policy">Más Información...</router-link>
           </p>
-          <br />
           <p>Para explorar las rutas, debe pulsar el botón</p>
           <!-- Agree -->
           <ButtonYellow label="Estoy de acuerdo" @click="emit('agree')" />
@@ -49,6 +48,7 @@ defineProps({
   align-items: center
   justify-content: center
   padding: 1rem
+  gap: 0.5rem
 
 
 .card
@@ -57,44 +57,24 @@ defineProps({
   padding: 2.5rem 2rem
   text-align: center
   max-width: 90vw
+  max-height: 70vh
   border: 2.5px solid #000
   position: relative
-  
 
 
-.close-btn
-  position: absolute
-  top: 0.75rem
-  right: 0.75rem
-  background: none
-  border: none
-  font-size: 1.2rem
-  cursor: pointer
 
 
 .emoji
-  font-size: 4rem
-  margin-bottom: 1rem
-
-
-h1
-  font-size: 2.5rem
-  margin: 0
-  color: #ff6b6b
-
+  font-size: 2rem
 
 h2
-  font-size: 1.4rem
-  margin: 0.5rem 0 1rem
+  font-size: 0.89rem
   color: #333
 
 
 p
   font-size: 1rem
   color: #555
-  margin-bottom: 1.5rem
-
-
 
 
 a

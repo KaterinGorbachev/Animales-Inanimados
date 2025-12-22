@@ -131,6 +131,7 @@ h2
         padding: 0.35rem 0.6rem
         cursor: pointer
         transition: background 0.2s ease, color 0.2s ease
+        overflow-wrap: break-word
 
         &:hover
           color: #A32100
