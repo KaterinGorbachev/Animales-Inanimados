@@ -52,6 +52,7 @@ function retryQuiz() {
 
 function goToRoute() {
   showPopup.value = false
+  localStorage.setItem('galleryIndex', 0)
   router.push(`/route/${props.routeId}`)
 }
 </script>
@@ -107,6 +108,7 @@ function goToRoute() {
   align-items: center
   justify-content: center
   gap: 1rem
+  padding-top: 1rem
 
 .correct :deep(.btn__float)
   background-color: rgba(0, 200, 83, 0.35)

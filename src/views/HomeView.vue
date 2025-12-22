@@ -1,11 +1,11 @@
 <template>
-  <main class="flex flex-col-reverse items-center lg:flex-row lg:gap-24">
-    <div class="description lg:w-[65%] flex flex-col">
+  <main class="flex flex-col items-center lg:flex-row gap-24 lg:h-[70vh]">
+    <div class="description lg:w-[65%] flex flex-col w-[90%]">
       <h1 class="lg:w-[100%]">Animales inanimados</h1>
       <p class="lg:w-[90%]">
         Descubra fascinantes esculturas de animales por toda la ciudad con nuestra experiencia de
-        mapa interactivo. Hay 2 rutas disponibles de inmediato para explorar. Para desbloquear 3
-        rutas adicionales, responde correctamente a todas las preguntas en las tres rutas abiertas.
+        mapa interactivo. Hay 2 rutas disponibles de inmediato para explorar. Para desbloquear 4
+        rutas adicionales, responde correctamente a las preguntas en las rutas abiertas.
       </p>
       <div class="flex flex-col lg:flex-row items-center justify-end gap-[1rem]">
         <div>
@@ -67,8 +67,9 @@ const letters = computed(() => text.split(''))
 //     transform: translateX(0)
 
 .copy-rights
+  position: relative
   bottom: 2px
-  padding-right: 10px
+  right: 2px
   opacity: 30%
   text-align: end
 
@@ -105,19 +106,17 @@ const letters = computed(() => text.split(''))
 
 main
   position: relative
-  padding: 1rem 3rem
+  padding: 1rem
   padding-bottom: 10rem
+  @media only screen and (min-width: 800px)
+    padding: 1rem 3rem
+
 
 
   .description
     gap: 1rem
 
-  h1
-    //color: #0F4B00
-    color: #0F3206
-    font-family: "Limelight", sans-serif
-    font-size: 102px
-    line-height: 93px
+
 
 
   p
@@ -128,7 +127,7 @@ main
   h3
     font-family: "Barrio", system-ui
     font-weight: 400
-    font-size: 2.25rem
+    font-size: 1.15rem
     overflow: hidden
     white-space: pre-wrap
     display: inline-block     // starting width
@@ -137,6 +136,10 @@ main
     letter-spacing: 10%
     -webkit-text-fill-color: black
     -webkit-text-stroke-width: 0
+
+    @media only screen and (min-width: 800px)
+      font-size: 2.25rem
+
 
   .img__box
     position: relative
@@ -169,9 +172,9 @@ main
 
     .overlay
       position: absolute
-      width: 80px /* adjust size as needed */
+      width: 80px
       height: auto
-      z-index: 3 /* above frame */
+      z-index: 3
 
     .overlay__left
       bottom: 0

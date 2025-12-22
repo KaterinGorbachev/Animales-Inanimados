@@ -6,6 +6,8 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     { path: '/', component: HomeView },
+    { path: '/about', component: () => import('@/views/AboutProject.vue') },
+    { path: '/policy', component: () => import('@/views/PolicyView.vue') },
     { path: '/route/all', component: () => import('@/views/AllRoutes.vue') },
     {
       path: '/route/:id',

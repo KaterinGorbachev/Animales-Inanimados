@@ -1,9 +1,9 @@
 <template>
   <div class="main flex flex-col gap-2 w-full">
-    <div class="flex justify-between title w-full">
+    <div class="flex justify-between title w-full gap-[1rem]">
       <h2>RUTA {{ rutaNum }} {{ rutaName }}</h2>
       <div class="flex gap-2">
-        <div class="flex">
+        <div class="flex flex-row-reverse lg:flex-row gap-[1rem]">
           <p>{{ rutaTime }} min.</p>
           <svg
             width="20px"
@@ -25,7 +25,7 @@
         <p>Paradas: {{ rutaStops }}</p>
       </div>
     </div>
-    <div class="flex justify-between w-full">
+    <div class="flex justify-between w-full flex-col items-start gap-[1rem] lg:flex-row">
       <div class="flex">
         <svg width="28px" height="28px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
           <title>Ruta empieza</title>
@@ -101,7 +101,7 @@ defineProps({
 .main
   font-size: 1rem
   font-family: "Space Mono", monospace !important
-  padding: 1rem
+  padding: 10px
   overflow-x: hidden
   .title
     font-weight: 700

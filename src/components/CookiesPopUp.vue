@@ -1,0 +1,109 @@
+<template>
+  <Teleport to="body">
+    <div v-if="show" class="overlay">
+      <div class="not-found">
+        <div class="card">
+          <div class="emoji">🍪</div>
+
+          <h1>Usamos galletitas digitales</h1>
+          <p>
+            En esta página usamos cookies (¡no se comen 😄!). Son pequeños ayudantes que nos
+            permiten: recordar lo que te gusta, hacer que la página funcione mejor, mantener todo
+            seguro y divertido. <router-link to="/policy">Más Información...</router-link>
+          </p>
+          <br />
+          <p>Para explorar las rutas, debe pulsar el botón</p>
+          <!-- Agree -->
+          <ButtonYellow label="Estoy de acuerdo" @click="emit('agree')" />
+        </div>
+      </div>
+    </div>
+  </Teleport>
+</template>
+
+<script setup>
+import ButtonYellow from '@/components/ButtonYellow.vue'
+
+const emit = defineEmits(['agree'])
+
+defineProps({
+  show: {
+    type: Boolean,
+    required: true,
+    default: true,
+  },
+})
+</script>
+
+<style lang="sass" scoped>
+.overlay
+  position: fixed
+  inset: 0
+  background: rgba(0, 0, 0, 0.45)
+  z-index: 999
+
+
+.not-found
+  min-height: 100vh
+  display: flex
+  align-items: center
+  justify-content: center
+  padding: 1rem
+
+
+.card
+  background: white
+  border-radius: none
+  padding: 2.5rem 2rem
+  text-align: center
+  max-width: 90vw
+  border: 2.5px solid #000
+  position: relative
+  
+
+
+.close-btn
+  position: absolute
+  top: 0.75rem
+  right: 0.75rem
+  background: none
+  border: none
+  font-size: 1.2rem
+  cursor: pointer
+
+
+.emoji
+  font-size: 4rem
+  margin-bottom: 1rem
+
+
+h1
+  font-size: 2.5rem
+  margin: 0
+  color: #ff6b6b
+
+
+h2
+  font-size: 1.4rem
+  margin: 0.5rem 0 1rem
+  color: #333
+
+
+p
+  font-size: 1rem
+  color: #555
+  margin-bottom: 1.5rem
+
+
+
+
+a
+  font-size: 0.85rem
+  color: #5C0880
+  text-decoration: underline
+  cursor: pointer
+  transition: background 0.2s ease, color 0.2s ease
+
+  &:hover
+    color: #A32100
+</style>

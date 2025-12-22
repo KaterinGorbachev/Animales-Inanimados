@@ -64,14 +64,15 @@ h2
   flex-direction: column
   background: #ffffff
   border: 2px solid #000
-  overflow-x: hidden
   overflow-y: auto
   min-width: 250px
-  max-width: 380px
+  max-width: 90vw
   height: 450px
   scroll-snap-align: start
-
   flex: 0 0 auto
+  @media only screen and (min-width: 800px)
+    max-width: 35vw
+
 
 
 
@@ -101,11 +102,13 @@ h2
   .data
     height: 60%
     padding: 0.25rem
+    padding-right: 1rem
     font-size: 1rem
     color: #000
     gap: 1rem
     display: flex
     flex-direction: column
+
 
 
 
