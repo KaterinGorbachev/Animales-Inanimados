@@ -197,8 +197,8 @@ const RecenterControl = L.Control.extend({
 // --------------------
 //custom marker
 const lionIcon = L.icon({
-  iconUrl: '/src/images/lion-marker.png',
-  shadowUrl: '/src/images/marker-shadow.png',
+  iconUrl: '/lion-marker.png',
+  shadowUrl: '/marker-shadow.png',
   iconSize: [70, 75], // size of the icon
   shadowSize: [50, 64], // size of the shadow
   iconAnchor: [22, 61], // point of the icon which will correspond to marker's location
