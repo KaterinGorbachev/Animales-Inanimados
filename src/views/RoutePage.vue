@@ -35,7 +35,7 @@
               v-for="stop in routeData.stops"
               :key="stop.id"
               :id="stop.id"
-              :img="stop.image?.trim() ? stop.image : '/src/images/default_image.png'"
+              :img="stop.image?.trim() ? stop.image : defaultImage"
               :stop-num="stop.id"
               :stop-name="stop.name"
               :stop-address="stop.address"
@@ -63,6 +63,8 @@ import { animales } from '@/internaldata/animales'
 import { ref, onMounted, computed, nextTick, watch } from 'vue'
 import * as L from 'leaflet'
 import 'leaflet.markercluster'
+
+import defaultImage from '@/images/default_image.png'
 
 import RouteDescription from '@/components/RouteDescription.vue'
 import LocationCard from '@/components/LocationCard.vue'
