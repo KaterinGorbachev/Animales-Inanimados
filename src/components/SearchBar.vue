@@ -66,11 +66,19 @@
 
 <script setup>
 import ButtonWhite from './ButtonWhite.vue'
+import { useRouter } from 'vue-router'
 import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
 import * as turf from '@turf/turf'
 import { animales } from '/src/internaldata/animales.js'
 import Swal from 'sweetalert2'
 import 'animate.css'
+import { useSearchRouteBarrio } from '@/stores/searchRoteBarrio'
+
+//save the search result in a Local Storage with pinia
+const foundRoutes = useSearchRouteBarrio()
+
+// to redirect on a page with search results
+let router = useRouter()
 
 // to change styles of input field: active, error, ok
 let inputFieldStyles = ref('input__normal')
@@ -86,9 +94,6 @@ const searchOpen = ref(false)
 
 //variable to save all barrios
 let allBarrios = ref([])
-
-//variable for serached routes
-let foundRoutesForBarrio = ref([])
 
 //------------function to get list of Areas in Valencia from public API - saved in /public/data
 //------------save all data in a variable allBarrios
@@ -152,11 +157,13 @@ function onClickOutsideSearch(e) {
 //---------------------------------------------------------
 
 //----------------get routes calculated inside a specific barrio
-let getRoutes = (barrio) => {
+//--------------- async for better loading, loading controlled in pinia
+const getRoutes = async (barrio) => {
+  // --- Validation ---
   if (
     !selectedBarrio.value ||
     inputValueFromSearchBar.value.trim() === '' ||
-    selectedBarrio.value != inputValueFromSearchBar.value.trim().toUpperCase()
+    selectedBarrio.value !== inputValueFromSearchBar.value.trim().toUpperCase()
   ) {
     Swal.fire({
       icon: 'warning',
@@ -181,38 +188,51 @@ let getRoutes = (barrio) => {
   }
 
   try {
+    // --- start loading ---
+    foundRoutes.setLoading(true)
+
     let exactBarrioData = allBarrios.value.find(
-      (b) => b.nombre.trim().toUpperCase() == barrio.trim().toUpperCase(),
+      (b) => b.nombre.trim().toUpperCase() === barrio.trim().toUpperCase(),
     )
 
+    if (!exactBarrioData?.geo_shape) {
+      throw new Error('Barrio polygon not found')
+    }
+
+    // --- find routes inside barrio ---
     // API returns polygon in exactBarrioData.geo_shape
     // using turf to check if any stop is inside the barrio
     //let inside = turf.booleanPointInPolygon(turf.point([-0.3790193628368707, 39.47362189872084]), exactBarrioData.geo_shape);
-    //console.log(inside);
-
     // checking if any point from animales.js is in the barrio
-    // if it is ==>> append the route to the list foundRoutesForBarrio
-    foundRoutesForBarrio.value = []
-    animales.forEach((route) => {
-      if (!foundRoutesForBarrio.value.some((r) => r.id === route.id)) {
-        let isInBarrio = route.stops.find((stop) => {
-          let stopPoint = turf.point([stop.location.lon, stop.location.lat])
-          return turf.booleanPointInPolygon(stopPoint, exactBarrioData.geo_shape)
-        })
-        if (isInBarrio) {
-          foundRoutesForBarrio.value.push(route)
-        }
-      }
+    // if it is ==>> append the route to the list foundRoutes
+    let routesInBarrio = animales.filter((route) => {
+      if (!Array.isArray(route.stops)) return false
+
+      return route.stops.some((stop) => {
+        if (!stop?.location) return false
+
+        const stopPoint = turf.point([stop.location.lon, stop.location.lat])
+
+        return turf.booleanPointInPolygon(stopPoint, exactBarrioData.geo_shape)
+      })
     })
+
+    // --- save results in Pinia ---
+    foundRoutes.setResults(barrio, routesInBarrio)
+
+    // --- cleanup ---
     selectedBarrio.value = null
     inputValueFromSearchBar.value = ''
-    if (foundRoutesForBarrio.value.length > 0) {
-      closeSearch()
-    }
 
-    console.log(foundRoutesForBarrio)
+    if (routesInBarrio.length > 0) {
+      closeSearch()
+      await router.push('/route/all')
+    }
   } catch (error) {
-    console.log(error)
+    console.error('[getRoutes]', error)
+  } finally {
+    // --- stop loading ---
+    foundRoutes.setLoading(false)
   }
 }
 
@@ -239,13 +259,11 @@ onMounted(() => {
   isolation: isolate
   position: relative
 
-
   .magnyfying_glass__box
     position: relative
     z-index: 11
     width: 28px
     height: 28px
-
     cursor: pointer
 
   .search__box
@@ -253,11 +271,13 @@ onMounted(() => {
     z-index: 12
     visibility: hidden
     padding-top: 3rem
-
-    width: 350px
+    width: 100%
     min-width: 250px
     max-width: 350px
-    right: 6rem
+    right: 1rem
+    @media only screen and (min-width: 800px)
+      width: 30%
+      right: 6rem
 
     &.open
       visibility: visible
@@ -285,7 +305,7 @@ onMounted(() => {
     top: 100%
     right: 0
     z-index: 11
-    width: 350px
+    width: 100%
     max-width: 350px
     min-width: 250px
     max-height: 240px
@@ -294,9 +314,6 @@ onMounted(() => {
     border: 2.5px solid #000
     background-color: #ffda59
     backdrop-filter: blur(100px)
-
-
-
 
     li
       padding: 0.6rem 0.6rem

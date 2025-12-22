@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 
 export const useUnlockStore = defineStore('unlock', {
   state: () => ({
-    unlockedRoutes: [1,2], // example: [1, 2]
+    unlockedRoutes: [1, 2], // example: [1, 2]
   }),
 
   actions: {

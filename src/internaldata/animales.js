@@ -336,6 +336,17 @@ export const animales = [
     start: 'Puerta del Mar',
     finish: 'Jardines del Parterre',
     time: 90,
+    quiz: {
+      question:
+        'Solo vive en los cuentos, no hay por qué temer; es un ser de fantasía que no puede aparecer.',
+      options: [
+        { key: 'a', text: '🐉 Dragon' },
+        { key: 'b', text: '🦇 Murciélago' },
+        { key: 'c', text: '🪸 Caballito de mar' },
+        { key: 'd', text: '🐡 Pez globo' },
+      ],
+      answer: 'a',
+    },
     stops: [
       {
         id: 1,

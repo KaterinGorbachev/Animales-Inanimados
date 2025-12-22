@@ -19,10 +19,10 @@
           <RouterLink to="/route/all" class="menu-nav__link" @click="close">Rutas</RouterLink>
         </li>
         <li class="menu-nav__item" :class="{ open: isOpen }">
-          <RouterLink to="" class="menu-nav__link" @click="close">Sobre proyecto</RouterLink>
+          <RouterLink to="/about" class="menu-nav__link" @click="close">Sobre proyecto</RouterLink>
         </li>
         <li class="menu-nav__item" :class="{ open: isOpen }">
-          <RouterLink to="" class="menu-nav__link" @click="close"
+          <RouterLink to="/policy" class="menu-nav__link" @click="close"
             >Política de privacidad</RouterLink
           >
         </li>
@@ -86,8 +86,6 @@ onBeforeUnmount(() => {
 
 @use '@/styles/variables'
 
-
-
 .burger__box
   isolation: isolate
   position: relative
@@ -108,7 +106,6 @@ onBeforeUnmount(() => {
     &__burger
 
       position: absolute
-
       width: 25px
       height: 3px
       background: black
@@ -132,7 +129,6 @@ onBeforeUnmount(() => {
         background: black
         @include variables.transition-ease
 
-
       &.open
         background: transparent
 
@@ -146,15 +142,14 @@ onBeforeUnmount(() => {
           transform: rotate(-45deg) translate(3px, -7px)
 
 
-
-
   .nav
     margin-top: 1rem
     position: fixed
     top: 6rem
-    right: 0
-    padding-right: 3rem
+    right: 1rem
     visibility: hidden
+    @media only screen and (min-width: 800px)
+      padding-right: 1.5rem
 
 
     &.open
