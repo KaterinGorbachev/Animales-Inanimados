@@ -101,8 +101,7 @@ h2
 
   .data
     height: 60%
-    padding: 0.25rem
-    padding-right: 1rem
+    padding: 1rem 0.25rem
     font-size: 1rem
     color: #000
     gap: 1rem

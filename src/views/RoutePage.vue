@@ -126,7 +126,7 @@ const scrollToCard = async (index) => {
   if (!card) return
 
   gallery.value.scrollTo({
-    left: card.offsetLeft - gallery.value.offsetLeft,
+    left: card.offsetLeft - gallery.value.offsetLeft - 16,
     behavior: 'smooth',
   })
 }
@@ -260,7 +260,7 @@ onMounted(async () => {
   const savedIndex = Number(localStorage.getItem('galleryIndex'))
 
   if (!Number.isNaN(savedIndex)) {
-    await scrollToCard(savedIndex - 1) // because your cards are 1-based
+    await scrollToCard(savedIndex)
   }
 })
 </script>
@@ -341,7 +341,8 @@ onMounted(async () => {
       box-sizing: border-box
       min-width: 0
       padding: 1rem 4rem 1rem 1rem
-      scroll-snap-type: x mandatory
+      scroll-snap-type: none
+      scroll-margin-left: 1rem
       scroll-behavior: smooth
       -webkit-overflow-scrolling: touch
 

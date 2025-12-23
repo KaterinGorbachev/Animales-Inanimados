@@ -19,5 +19,5 @@ import LogoLion from './LogoLion.vue'
 header
   padding: 1rem 0
   padding-left: 3rem
-  z-index: 2000
+  z-index: 1050
 </style>

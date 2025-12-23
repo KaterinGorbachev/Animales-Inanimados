@@ -14,7 +14,9 @@
       <!-- Map box -->
       <div class="map__box bg-white border-2 border-black">
         <div class="map__box__about flex items-center justify-between">
-          <p>Haga clic en el marcador para obtener información sobre la parada.</p>
+          <p>
+            Haga clic en el marcador para navegar a la tarjeta con la información sobre la parada.
+          </p>
         </div>
         <div
           ref="mapContainer"

@@ -58,12 +58,12 @@ function goToRoute() {
 </script>
 
 <template>
-  <div class="quiz-container w-[85%]">
+  <div class="quiz-container w-[85%] flex flex-col items-start">
     <p>Resuelve correctamente la pregunta para abrir la nueva ruta:</p>
 
     <h2>{{ question }}</h2>
 
-    <div class="options">
+    <div class="options w-full">
       <ButtonYellow
         v-for="option in options"
         :label="`${option.key.toUpperCase()} ${option.text}`"
@@ -83,7 +83,6 @@ function goToRoute() {
     :show="showPopup"
     :status-quiz="quizWin"
     :result="quizResult"
-    @close="showPopup = false"
     @retry="retryQuiz"
     @go="goToRoute"
   />
@@ -93,7 +92,7 @@ function goToRoute() {
 .quiz-container
   margin: 3rem 1rem
   padding: 2rem 1rem
-  text-align: center
+  text-align: start
   background: #fff
   border: 2.5px solid #000
   font-family: "Space Mono", monospace
