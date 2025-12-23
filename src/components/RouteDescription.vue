@@ -1,17 +1,18 @@
 <template>
-  <div class="main flex flex-col gap-2 w-full">
-    <div class="flex justify-between title w-full gap-[1rem]">
+  <div class="main flex flex-col w-full gap-[1rem]">
+    <div class="flex flex-col gap-[0.5rem] justify-between title w-full lg:flex-row">
       <h2>RUTA {{ rutaNum }} {{ rutaName }}</h2>
-      <div class="flex gap-2">
-        <div class="flex flex-row-reverse lg:flex-row gap-[1rem]">
+      <div class="flex justify-start items-center gap-[1rem]">
+        <div class="flex flex-row lg:flex-row justify-between items-center">
           <p>{{ rutaTime }} min.</p>
           <svg
-            width="20px"
-            height="20px"
-            viewBox="0 0 15 15"
+            width="28px"
+            height="28px"
+            viewBox="0 0 21 21"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             id="clock_icon"
+            class="flex items-center justify-center"
           >
             <title>reloj</title>
             <path
@@ -25,10 +26,28 @@
         <p>Paradas: {{ rutaStops }}</p>
       </div>
     </div>
-    <div class="flex justify-between w-full flex-col items-start gap-[1rem] lg:flex-row">
+    <div class="flex justify-between w-full flex-col items-start lg:flex-row">
       <div class="flex">
         <svg width="28px" height="28px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
           <title>Ruta empieza</title>
+          <g id="Layer_2" data-name="Layer 2">
+            <g>
+              <rect width="4" height="4" fill="none" />
+            </g>
+            <g id="stop_icon">
+              <path
+                d="M24,2C14.1,2,7,10.1,7,20S18.5,41.3,22.6,45.4a1.9,1.9,0,0,0,2.8,0C29.5,41.3,41,30.1,41,20S33.9,2,24,2Zm5.7,16.7-2.1,2,.5,3.1a1.1,1.1,0,0,1-1.5,1.1L24,23l-2.6,1.9a1.1,1.1,0,0,1-1.5-1.1l.5-3.1-2.1-2a1.1,1.1,0,0,1,.6-1.8l2.9-.4,1.3-2.9a1,1,0,0,1,1.8,0l1.3,2.9,2.9.4A1.1,1.1,0,0,1,29.7,18.7Z"
+                fill="currentColor"
+              />
+            </g>
+          </g>
+        </svg>
+
+        <p>Salida: {{ rutaStart }}</p>
+      </div>
+      <div class="flex">
+        <svg width="28px" height="28px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+          <title>Ruta acaba</title>
           <g id="Layer_2" data-name="Layer 2">
             <g>
               <rect width="4" height="4" fill="none" />
@@ -40,23 +59,6 @@
               />
               <path
                 d="M29.1,16.9l-2.9-.4-1.3-2.9a1,1,0,0,0-1.8,0l-1.3,2.9-2.9.4a1.1,1.1,0,0,0-.6,1.8l2.1,2-.5,3.1a1.1,1.1,0,0,0,1.5,1.1L24,23l2.6,1.9a1.1,1.1,0,0,0,1.5-1.1l-.5-3.1,2.1-2A1.1,1.1,0,0,0,29.1,16.9Z"
-                fill="currentColor"
-              />
-            </g>
-          </g>
-        </svg>
-        <p>Salida: {{ rutaStart }}</p>
-      </div>
-      <div class="flex">
-        <svg width="28px" height="28px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-          <title>Ruta acaba</title>
-          <g id="Layer_2" data-name="Layer 2">
-            <g>
-              <rect width="4" height="4" fill="none" />
-            </g>
-            <g id="stop_icon">
-              <path
-                d="M24,2C14.1,2,7,10.1,7,20S18.5,41.3,22.6,45.4a1.9,1.9,0,0,0,2.8,0C29.5,41.3,41,30.1,41,20S33.9,2,24,2Zm5.7,16.7-2.1,2,.5,3.1a1.1,1.1,0,0,1-1.5,1.1L24,23l-2.6,1.9a1.1,1.1,0,0,1-1.5-1.1l.5-3.1-2.1-2a1.1,1.1,0,0,1,.6-1.8l2.9-.4,1.3-2.9a1,1,0,0,1,1.8,0l1.3,2.9,2.9.4A1.1,1.1,0,0,1,29.7,18.7Z"
                 fill="currentColor"
               />
             </g>

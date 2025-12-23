@@ -4,7 +4,7 @@
       <div class="not-found">
         <div class="card">
           <!-- Close button -->
-          <button class="close-btn" @click="emit('close')">✖</button>
+          <!-- <button class="close-btn" @click="emit('close')">✖</button> -->
 
           <div class="emoji">{{ currentStatus.emoji }}</div>
 

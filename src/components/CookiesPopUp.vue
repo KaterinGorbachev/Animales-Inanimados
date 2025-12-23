@@ -7,11 +7,11 @@
 
           <h2>Usamos galletitas digitales</h2>
           <p>
-            En esta página usamos cookies. Son pequeños ayudantes que nos
-            permiten: recordar lo que te gusta, hacer que la página funcione mejor, mantener todo
-            seguro y divertido. <router-link to="/policy">Más Información...</router-link>
+            En esta página usamos cookies. Son pequeños ayudantes que nos permiten: recordar lo que
+            te gusta, hacer que la página funcione mejor, mantener todo seguro y divertido.
+            <router-link to="/policy">Más Información...</router-link>
           </p>
-          <p>Para explorar las rutas, debe pulsar el botón</p>
+          
           <!-- Agree -->
           <ButtonYellow label="Estoy de acuerdo" @click="emit('agree')" />
         </div>
@@ -68,17 +68,17 @@ defineProps({
   font-size: 2rem
 
 h2
-  font-size: 0.89rem
-  color: #333
+  font-size: 1.5rem
+  color: #ff6b6b
 
 
 p
-  font-size: 1rem
+  font-size: 0.89rem
   color: #555
 
 
 a
-  font-size: 0.85rem
+  font-size: 0.89rem
   color: #5C0880
   text-decoration: underline
   cursor: pointer
