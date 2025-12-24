@@ -273,13 +273,10 @@ onMounted(() => {
     z-index: 12
     visibility: hidden
     padding-top: 2rem
-
-
     top: 3rem
     right: 1rem
 
     @media only screen and (min-width: 800px)
-
       right: 6rem
 
     &.open
