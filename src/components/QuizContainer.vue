@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useUnlockStore } from '@/stores/unlockStore'
 import PopQuiz from './PopQuiz.vue'
+import LastQuizPop from './LastQuizPop.vue'
 import ButtonYellow from './ButtonYellow.vue'
 
 const router = useRouter()
@@ -55,11 +56,16 @@ function goToRoute() {
   localStorage.setItem('galleryIndex', 0)
   router.push(`/route/${props.routeId}`)
 }
+
+function close(){
+  showPopup.value = false
+}
 </script>
 
 <template>
   <div class="quiz-container w-[85%] flex flex-col items-start">
-    <p>Resuelve correctamente la pregunta para abrir la nueva ruta:</p>
+    <p v-if="routeId <= 6">Resuelve correctamente la pregunta para abrir la nueva ruta:</p>
+    <p v-else>Resuelve el último misterio</p>
 
     <h2>{{ question }}</h2>
 
@@ -80,12 +86,24 @@ function goToRoute() {
   </div>
 
   <PopQuiz
+    v-if="routeId <= 6"
     :show="showPopup"
     :status-quiz="quizWin"
     :result="quizResult"
     @retry="retryQuiz"
     @go="goToRoute"
   />
+  <LastQuizPop
+  v-else
+    :show="showPopup"
+    :status-quiz="quizWin"
+    :result="quizResult"
+    @retry="retryQuiz"
+    @close="close"
+  />
+
+
+
 </template>
 
 <style lang="sass" scoped>

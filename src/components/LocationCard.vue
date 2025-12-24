@@ -101,7 +101,7 @@ h2
 
   .data
     height: 60%
-    padding: 1rem 0.25rem
+    padding: 0.25rem 1rem
     font-size: 1rem
     color: #000
     gap: 1rem
@@ -130,7 +130,7 @@ h2
         padding: 0.35rem 0.6rem
         cursor: pointer
         transition: background 0.2s ease, color 0.2s ease
-        overflow-wrap: break-word
+        overflow-wrap: anywhere
 
         &:hover
           color: #A32100

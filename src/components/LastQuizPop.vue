@@ -9,14 +9,14 @@
           <div class="emoji">{{ currentStatus.emoji }}</div>
 
           <h1>{{ currentStatus.type }}</h1>
-          <h2>{{ currentStatus.message }}</h2>
+
 
           <!-- WIN -->
 
           <ButtonYellow
             v-if="result === 'win'"
-            label="¡Explora la nueva ruta!"
-            @click="emit('go')"
+            label="¡Eres un gran explorador!"
+            @click="emit('close')"
           />
 
           <!-- LOSE -->

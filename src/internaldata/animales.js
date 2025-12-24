@@ -520,6 +520,17 @@ export const animales = [
     start: "Passeig de l'Albereda, 16",
     finish: 'Passeig marítim de la Malva-rosa',
     time: 120,
+    quiz: {
+      question:
+        'Cuando preguntamos, nos dicen así: que él trae a los bebés, lo saben aquí. ¡Qué ave tan hermosa, sin comparación, en cualquier maternidad haría gran función!',
+      options: [
+        { key: 'a', text: '🦩 Flamingo' },
+        { key: 'b', text: '🦤 Сigüeña' },
+        { key: 'c', text: '🕊️ Paloma' },
+        { key: 'd', text: '🦅 Águila' },
+      ],
+      answer: 'b',
+    },
     stops: [
       {
         id: 1,

@@ -147,6 +147,7 @@ onBeforeUnmount(() => {
     position: fixed
     top: 6rem
     right: 1rem
+    
     visibility: hidden
     @media only screen and (min-width: 800px)
       padding-right: 1.5rem
@@ -165,10 +166,12 @@ onBeforeUnmount(() => {
         list-style-type: none
         transform: translateY(-100%)
         transition: .1s ease
-        width: 350px
+        width: 100%
         min-width: 240px
         max-width: 350px
         border: 2.5px solid #000
+        @media only screen and (min-width: 800px)
+          width: 40vw
 
         &.open
           transform: translateY(0)

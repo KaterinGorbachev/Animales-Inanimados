@@ -11,7 +11,7 @@
             te gusta, hacer que la página funcione mejor, mantener todo seguro y divertido.
             <router-link to="/policy">Más Información...</router-link>
           </p>
-          
+
           <!-- Agree -->
           <ButtonYellow label="Estoy de acuerdo" @click="emit('agree')" />
         </div>

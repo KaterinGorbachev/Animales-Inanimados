@@ -49,7 +49,7 @@
     </div>
 
     <QuizContainer
-      v-if="routeData.id < 6 && routeData.quiz"
+      v-if="routeData.quiz"
       :question="routeData.quiz.question"
       :options="routeData.quiz.options"
       :routeId="routeData.id + 1"

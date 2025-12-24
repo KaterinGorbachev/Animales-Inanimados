@@ -20,8 +20,8 @@
       </svg>
     </div>
     <div class="search__box flex flex-col" :class="{ open: searchOpen }" @click.stop>
-      <div class="flex flex-row items-center justify-between">
-        <div class="input__box flex flex-row items-center justify-between w-[90%]">
+      <div class="flex flex-col-reverse lg:flex-row items-center justify-between">
+        <div class="input__box flex flex-row items-center justify-between ">
           <input
             type="search"
             name=""
@@ -252,7 +252,7 @@ onMounted(() => {
   background-color: #ffda59
   backdrop-filter: blur(10px)
   transition: background-color .18s ease
-  max-width: 60%
+
   &:focus-within
     background-color: #fff
 
@@ -272,14 +272,14 @@ onMounted(() => {
     position: fixed
     z-index: 12
     visibility: hidden
+    padding-top: 2rem
 
-    width: 90vw
 
     top: 3rem
     right: 1rem
-    left: 1rem
+
     @media only screen and (min-width: 800px)
-      width: 30%
+
       right: 6rem
 
     &.open
