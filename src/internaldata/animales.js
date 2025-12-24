@@ -141,7 +141,7 @@ export const animales = [
         name: 'Ajuntament de València',
         address: "Plaça de l'Ajuntament",
         description:
-          'Aquí tienes el texto adaptado para niños de unos 10 años, con información extra sobre el murciélago: en València, en la plaza del Ayuntamiento, hay un escudo muy especial en la fachada. Ese escudo lo hizo el escultor Mariano Benlliure con bronce y mármol. Arriba del escudo hay un murciélago —un “rat-penat”— que representa a la ciudad. Dicen que ese murciélago ayudó hace muchos años a avisar a los soldados al caer la noche de un ataque sorpresa. Gracias a eso, la ciudad se ganó el derecho a usarlo como símbolo de protección.',
+          'En València, en la plaza del Ayuntamiento, hay un escudo muy especial en la fachada. Ese escudo lo hizo el escultor Mariano Benlliure con bronce y mármol. Arriba del escudo hay un murciélago —un “rat-penat”— que representa a la ciudad. Dicen que ese murciélago ayudó hace muchos años a avisar a los soldados al caer la noche de un ataque sorpresa. Gracias a eso, la ciudad se ganó el derecho a usarlo como símbolo de protección.',
         links: [
           'https://www.levante-emv.com/comunitat-valenciana/2024/10/09/muercielago-escudo-jaime-i-valencia-109055714.html',
           'https://www.visitvalencia.com/que-hacer-valencia/cultura-valenciana/escudo-valencia',
